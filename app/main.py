@@ -18,8 +18,5 @@ app = FastAPI(
 
 
 @app.get("/", response_class=RedirectResponse)
-async def root() -> dict[str, str]:
+async def root() -> RedirectResponse:
     return RedirectResponse(url="/docs")
-
-
-_logger = logging.getLogger(__name__)
